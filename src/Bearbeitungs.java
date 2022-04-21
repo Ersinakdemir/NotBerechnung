@@ -12,10 +12,13 @@ public class Bearbeitungs extends Schuler{
 public Bearbeitungs(){
 
 }
+    static Kurse kurs =new Kurse();
+    static Schuler schuler =new Schuler();
+
     static public void eingangsPanel(){
         System.out.println("====================================\nSchuler, Lehrer Leitung und Kurs Panel\n" +
                 "==================================\n" +
-                "1 - Schulerleitung\n2 - Lehrerleitung\n3 - Kurse\n4 -  Verlassen ");
+                "1 - Schulerleitung\n2 - Lehrerleitung\n3 - Kurse\n4 - Verlassen ");
         System.out.println("wählen Sie bitte Ihr Prozes aus");
         int auswänlen =scan.nextInt();
 
@@ -30,7 +33,7 @@ public Bearbeitungs(){
                 break;
             case 3:
                 welcheProzes ="Kurs";
-
+                weitereProzes();
                 break;
             case 4:
                 verlassen();
@@ -80,13 +83,15 @@ public Bearbeitungs(){
                 weitereProzes();
         }
     }
+
     private static void noteBewerten() {
         if (welcheProzes.equalsIgnoreCase("schuler")){
-            obj1.schuler();
+            //obj1.schuler();
         }else if(welcheProzes.equalsIgnoreCase("Lehrer")){
-            lehrerAdd();
+            System.out.println("wählen Sie bitte ein anderes Prozess aus");
+            weitereProzes();
         }else if (welcheProzes.equalsIgnoreCase("Kurs")){
-            obj.kurs();
+
         }
         else{
             System.out.println("Wählen Sie bitte Prozes aus");
@@ -94,18 +99,19 @@ public Bearbeitungs(){
         }
     }
 
-    static Kurse obj =new Kurse();
-    static Schuler obj1 =new Schuler();
     public static void einfügen() {
         if (welcheProzes.equalsIgnoreCase("schuler")){
-            obj1.schuler();
+            schuler.schuler();
+            eingangsPanel();
         }else if(welcheProzes.equalsIgnoreCase("Lehrer")){
-            lehrerAdd();
+            lehrerAdd();eingangsPanel();
         }else if (welcheProzes.equalsIgnoreCase("Kurs")){
-            obj.kurs();
+            kurs.kurs();
+            eingangsPanel();
         }
         else{
             System.out.println("Wählen Sie bitte Prozes aus");
+            weitereProzes();
             weitereProzes();
         }
     }

@@ -41,6 +41,6 @@ Methods : Teacher()-->öğretmen()
         scan.next();//dummy cod
         System.out.println("geben Sie bitte fächer des Lerers ein");
         fach=scan.nextLine();
-
     }
+
 }
