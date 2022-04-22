@@ -13,7 +13,7 @@ public Bearbeitungs(){
 
 }
     static Kurse kurs =new Kurse();
-    static Schuler schuler =new Schuler();
+    //static Schuler schuler =new Schuler();
 
     static public void eingangsPanel(){
         System.out.println("====================================\nSchuler, Lehrer Leitung und Kurs Panel\n" +
@@ -101,10 +101,11 @@ public Bearbeitungs(){
 
     public static void einfügen() {
         if (welcheProzes.equalsIgnoreCase("schuler")){
-            schuler.schuler();
+            schuler();
             eingangsPanel();
         }else if(welcheProzes.equalsIgnoreCase("Lehrer")){
-            lehrerAdd();eingangsPanel();
+            Kurse.lehrerAdd();
+            eingangsPanel();
         }else if (welcheProzes.equalsIgnoreCase("Kurs")){
             kurs.kurs();
             eingangsPanel();
@@ -115,4 +116,26 @@ public Bearbeitungs(){
             weitereProzes();
         }
     }
+
+    static List<Schuler>schulerList = new ArrayList<>();
+    public static void schuler(){
+        System.out.println("geben Sie bitte der Name des Schulers ein");
+        schulerName =scan.next();
+        System.out.println("geben Sie bitte der Nachname des Schulers ein");
+        schulerNachname =scan.next();
+        System.out.println("geben Sie bitte die SchulNo des Schulers ein");
+        schulNo =scan.nextInt();
+        System.out.println("geben Sie bitte die klase des Schulers ein");
+        klase =scan.nextInt();
+        System.out.println("geben Sie bitte kurs1 des Schulers ein");
+        kurs1 =scan.next();
+        System.out.println("geben Sie bitte kurs2 des Schulers ein");
+        kurs2 =scan.next();
+        System.out.println("geben Sie bitte kurs3 des Schulers ein");
+        kurs3 =scan.next();
+        Schuler schuler =new Schuler(schulerName,schulerNachname,schulNo,klase,kurs1,kurs2,kurs3);
+        schulerList.add(schuler);
+        System.out.println(schulerList);
+    }
+
 }

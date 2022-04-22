@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Schuler extends Kurse {
+public class Schuler {
     /*
     ----------Student Class Özellikleri :
 
@@ -11,7 +11,7 @@ Methods : Student(), addBulkExamNote(), isPass(), calcAvarage(), printNote()
 -->öğrenci(), topluSınavNotuEkle(), gectiMi() ortlamaHesapla(), notYazdır()
 
      */
-    static String schulerName;
+     static String schulerName;
      static String schulerNachname;
      static int schulNo;
      static int klase;
@@ -79,8 +79,6 @@ Methods : Student(), addBulkExamNote(), isPass(), calcAvarage(), printNote()
 
 
 
-    static List<Schuler>schulerList = new ArrayList<Schuler>();
-
     /*Kurse mathe =new Kurse("Ali","Mathe",8,45);
     Kurse sprach =new Kurse("Veli" ,"sprac",4,50);
     Kurse fizik =new Kurse("Ersin","Fizik",4,35);
@@ -98,27 +96,5 @@ Methods : Student(), addBulkExamNote(), isPass(), calcAvarage(), printNote()
         this.kurs3 = kurs3;
 
     }
-
-
-    public  void schuler(){
-        System.out.println("geben Sie bitte der Name des Schulers ein");
-        schulerName =scan.nextLine();
-        System.out.println("geben Sie bitte der Nachname des Schulers ein");
-        schulerNachname =scan.next();
-        System.out.println("geben Sie bitte die SchulNo des Schulers ein");
-        schulNo =scan.nextInt();
-        System.out.println("geben Sie bitte die klase des Schulers ein");
-        klase =scan.nextInt();
-        System.out.println("geben Sie bitte kurs1 des Schulers ein");
-        kurs1 =scan.next();
-        System.out.println("geben Sie bitte kurs2 des Schulers ein");
-        kurs2 =scan.next();
-        System.out.println("geben Sie bitte kurs3 des Schulers ein");
-        kurs3 =scan.next();
-        Schuler schuler =new Schuler(schulerName,schulerNachname,schulNo,klase,kurs1,kurs2,kurs3);
-        schulerList.add(schuler);
-        System.out.println(schulerList.toString());
-    }
-
 }
 

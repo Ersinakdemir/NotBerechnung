@@ -20,6 +20,7 @@ Methods : Course() , addTeacher() , printTeacher()--> kurs(), öğretmenEkle(), 
     static ArrayList<Lehrer> lehrerList = new ArrayList<>();
     static ArrayList<Kurse> kurseList = new ArrayList<>();
     static List<Kurse> kursNoteList = new ArrayList<>();
+
     public Kurse(){
         super();
     }
